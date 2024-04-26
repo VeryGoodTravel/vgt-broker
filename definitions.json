@@ -1,0 +1,148 @@
+{
+    "rabbit_version": "3.8.9",
+    "rabbitmq_version": "3.8.9",
+    "product_name": "RabbitMQ",
+    "product_version": "3.8.9",
+    "users": [
+      {
+        "name": "verygoodtravel",
+        "password_hash": "sqy5p8pDuPkYfdJEPCRbOdsHa698H0V8bvPvr5TLaDr8eg35L1BwP3G5ovQjBGpl3KjtsLe33GlikAAkLKf6Zt6jxQQ=",
+        "hashing_algorithm": "rabbit_password_hashing_sha512",
+        "tags": "administrator"
+      }
+    ],
+    "vhosts": [
+      {
+        "name": "vgt-vhost"
+      }
+    ],
+    "permissions": [
+      {
+        "user": "verygoodtravel",
+        "vhost": "vgt-vhost",
+        "configure": ".*",
+        "write": ".*",
+        "read": ".*"
+      }
+    ],
+    "topic_permissions": [
+  
+    ],
+    "parameters": [
+  
+    ],
+    "global_parameters": [
+      {
+        "name": "cluster_name",
+        "value": "rabbit@a8d5c6e08439"
+      },
+      {
+        "name": "internal_cluster_id",
+        "value": "rabbitmq-cluster-id-gXeBLbsUC2W2tU0Bx_QY_w"
+      }
+    ],
+    "policies": [
+  
+    ],
+    "queues": [
+      {
+        "name": "saga-replies-queue",
+        "vhost": "vgt-vhost",
+        "durable": true,
+        "auto_delete": false,
+        "arguments": {
+          "x-queue-mode": "lazy",
+          "x-queue-type": "classic"
+        }
+      },
+      {
+        "name": "saga-order-queue",
+        "vhost": "vgt-vhost",
+        "durable": true,
+        "auto_delete": false,
+        "arguments": {
+          "x-queue-mode": "lazy",
+          "x-queue-type": "classic"
+        }
+      },
+      {
+        "name": "saga-payment-queue",
+        "vhost": "vgt-vhost",
+        "durable": true,
+        "auto_delete": false,
+        "arguments": {
+          "x-queue-mode": "lazy",
+          "x-queue-type": "classic"
+        }
+      },
+      {
+        "name": "saga-hotel-queue",
+        "vhost": "vgt-vhost",
+        "durable": true,
+        "auto_delete": false,
+        "arguments": {
+          "x-queue-mode": "lazy",
+          "x-queue-type": "classic"
+        }
+      },
+      {
+        "name": "saga-flight-queue",
+        "vhost": "vgt-vhost",
+        "durable": true,
+        "auto_delete": false,
+        "arguments": {
+          "x-queue-mode": "lazy",
+          "x-queue-type": "classic"
+        }
+      }
+    ],
+    "exchanges": [
+    ],
+    "bindings": [
+      {
+        "source": "amq.direct",
+        "vhost": "vgt-vhost",
+        "destination": "saga-replies-queue",
+        "destination_type": "queue",
+        "routing_key": "saga-replies-queue",
+        "arguments": {
+        }
+      },
+      {
+        "source": "amq.direct",
+        "vhost": "vgt-vhost",
+        "destination": "saga-order-queue",
+        "destination_type": "queue",
+        "routing_key": "saga-order-queue",
+        "arguments": {
+        }
+      },
+      {
+        "source": "amq.direct",
+        "vhost": "vgt-vhost",
+        "destination": "saga-payment-queue",
+        "destination_type": "queue",
+        "routing_key": "saga-payment-queue",
+        "arguments": {
+        }
+      },
+      {
+        "source": "amq.direct",
+        "vhost": "vgt-vhost",
+        "destination": "saga-hotel-queue",
+        "destination_type": "queue",
+        "routing_key": "saga-hotel-queue",
+        "arguments": {
+        }
+      },
+      {
+        "source": "amq.direct",
+        "vhost": "vgt-vhost",
+        "destination": "saga-flight-queue",
+        "destination_type": "queue",
+        "routing_key": "saga-flight-queue",
+        "arguments": {
+        }
+      }
+    ]
+  }
