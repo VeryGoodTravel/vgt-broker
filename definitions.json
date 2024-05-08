@@ -6,7 +6,7 @@
     "users": [
       {
         "name": "verygoodtravel",
-        "password_hash": "sqy5p8pDuPkYfdJEPCRbOdsHa698H0V8bvPvr5TLaDr8eg35L1BwP3G5ovQjBGpl3KjtsLe33GlikAAkLKf6Zt6jxQQ=",
+        "password_hash": "toRpOUQGhANxwMawEo9W6BPWQs11qheKfLP0ASRUEXCR8zk6Lrpv7w5R7FdGuvrLI9ziUzjg/Ql6H1LiQigD3VIg8o8=",
         "hashing_algorithm": "rabbit_password_hashing_sha512",
         "tags": "administrator"
       }
@@ -94,9 +94,26 @@
           "x-queue-mode": "lazy",
           "x-queue-type": "classic"
         }
+      },
+      {
+        "name": "backend-to-saga-queue",
+        "vhost": "vgt-vhost",
+        "durable": true,
+        "auto_delete": false,
+        "arguments": {
+          "x-queue-mode": "lazy",
+          "x-queue-type": "classic"
+        }
       }
     ],
     "exchanges": [
+      {"name":"saga-to-backends",
+        "vhost":"vgt-vhost",
+        "type":"fanout",
+        "durable":true,
+        "auto_delete":false,
+        "internal":false,
+        "arguments":{}}
     ],
     "bindings": [
       {

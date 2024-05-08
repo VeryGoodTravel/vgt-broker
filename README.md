@@ -13,3 +13,7 @@ Default user is stored in the repository secrets tab.
 - saga-payment-queue (queue with the requests to the payment gate microservice),
 - saga-hotel-queue (queue with the requests to the hotel microservice),
 - saga-flight-queue (queue with the requests to the flight microservice).
+- backend-to-saga-queue (queue with the requests from the backend to saga)
+
+## and exchanges:
+- saga-to-backends (main exchange notifying backends that a saga transaction finished)
