@@ -50,70 +50,61 @@
         "vhost": "vgt-vhost",
         "durable": true,
         "auto_delete": false,
-        "arguments": {
-          "x-queue-mode": "lazy",
-          "x-queue-type": "classic"
-        }
+        "exclusive": false,
+        "arguments": {}
       },
       {
         "name": "saga-order-queue",
         "vhost": "vgt-vhost",
         "durable": true,
         "auto_delete": false,
-        "arguments": {
-          "x-queue-mode": "lazy",
-          "x-queue-type": "classic"
-        }
+        "exclusive": false,
+        "arguments": {}
       },
       {
         "name": "saga-payment-queue",
         "vhost": "vgt-vhost",
         "durable": true,
         "auto_delete": false,
-        "arguments": {
-          "x-queue-mode": "lazy",
-          "x-queue-type": "classic"
-        }
+        "exclusive": false,
+        "arguments": {}
       },
       {
         "name": "saga-hotel-queue",
         "vhost": "vgt-vhost",
         "durable": true,
         "auto_delete": false,
-        "arguments": {
-          "x-queue-mode": "lazy",
-          "x-queue-type": "classic"
-        }
+        "exclusive": false,
+        "arguments": {}
       },
       {
         "name": "saga-flight-queue",
         "vhost": "vgt-vhost",
         "durable": true,
         "auto_delete": false,
-        "arguments": {
-          "x-queue-mode": "lazy",
-          "x-queue-type": "classic"
-        }
+        "exclusive": false,
+        "arguments": {}
       },
       {
         "name": "backend-to-saga-queue",
         "vhost": "vgt-vhost",
         "durable": true,
         "auto_delete": false,
-        "arguments": {
-          "x-queue-mode": "lazy",
-          "x-queue-type": "classic"
-        }
+        "exclusive": false,
+        "arguments": {}
       }
     ],
     "exchanges": [
-      {"name":"saga-to-backends",
-        "vhost":"vgt-vhost",
-        "type":"fanout",
-        "durable":true,
-        "auto_delete":false,
-        "internal":false,
-        "arguments":{}}
+      {
+        "name": "saga-to-backends",
+        "vhost": "vgt-vhost",
+        "type": "fanout",
+        "durable": true,
+        "auto_delete": false,
+        "internal": false,
+        "exclusive": false,
+        "arguments": {}
+      }
     ],
     "bindings": [
       {
