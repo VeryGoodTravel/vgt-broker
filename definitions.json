@@ -86,6 +86,14 @@
         "arguments": {}
       },
       {
+        "name": "stats-queue",
+        "vhost": "vgt-vhost",
+        "durable": true,
+        "auto_delete": false,
+        "exclusive": false,
+        "arguments": {}
+      },
+      {
         "name": "backend-to-saga-queue",
         "vhost": "vgt-vhost",
         "durable": true,
@@ -140,6 +148,15 @@
         "destination": "saga-hotel-queue",
         "destination_type": "queue",
         "routing_key": "saga-hotel-queue",
+        "arguments": {
+        }
+      },
+      {
+        "source": "amq.direct",
+        "vhost": "vgt-vhost",
+        "destination": "stats-queue",
+        "destination_type": "queue",
+        "routing_key": "stats-queue",
         "arguments": {
         }
       },
